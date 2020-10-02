@@ -187,17 +187,30 @@
           Scope
         </h2>
         <p>
-          <i class="todo">Brief background of landscape, technology, and
-          relationship to the Web, users, developers, implementers, and
-          industry.</i>
+          Currently, machine learning inference in the browser uses the WebGL
+          graphics API with limited or no access to platform capabilities
+          beneficial for ML such as CPU parallelism, general-purpose GPU, or
+          dedicated ML hardware accelerators.
+        </p>
+        <p>
+          The proposed Web API aims to expose generic capabilities to the Web
+          required to provide close-to-native machine learning performance in
+          the browser. In addition to the performance benefits, inference in
+          the browser as opposed to in the cloud enhances privacy, since input
+          data such as locally sourced images or video streams stay within the
+          browser's sandbox. Local processing also enables machine learning use
+          cases that require low latency, such as object detection in immersive
+          web experiences.
         </p>
         <section id="section-out-of-scope">
           <h3 id="out-of-scope">
             Out of Scope
           </h3>
           <p>
-            The following features are out of scope, and will not be addressed
-            by this Working group.
+            The scope is limited to development of interfaces that expose
+            inference capabilities of the modern platforms beneficial or
+            purpose-built for ML. Training capabilities are out of scope due to
+            limited availability of respective platform APIs.
           </p>
           <ul class="out-of-scope"></ul>
         </section>
@@ -242,7 +255,7 @@
                 Machine Learning Community Group</a>
               </p>
               <p class="milestone">
-                <b>Expected completion:</b> <i class="todo">[Q1–4 yyyy]</i>
+                <b>Expected completion:</b> [CR Q1 2022]
               </p>
             </dd>
           </dl>
@@ -268,21 +281,12 @@
           <h3>
             Timeline
           </h3>
-          <p class="todo">
-            Put here a timeline view of all deliverables.
-          </p>
-          <ul class="todo">
-            <li>Month YYYY: First teleconference
+          <ul>
+            <li>Q1 2021: First teleconference
             </li>
-            <li>Month YYYY: First face-to-face meeting
+            <li>Q1 2021: First meeting
             </li>
-            <li>Month YYYY: Requirements and Use Cases for FooML
-            </li>
-            <li>Month YYYY: FPWD for FooML
-            </li>
-            <li>Month YYYY: Requirements and Use Cases for BarML
-            </li>
-            <li>Month YYYY: FPWD FooML Primer
+            <li>Q2 2021: FPWD for Web Neural Network API
             </li>
           </ul>
         </section>
