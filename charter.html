@@ -182,26 +182,32 @@
           <a href="#public">communication section</a>.
         </p>
       </section>
-      <section id="scope" class="scope">
-        <h2>
-          Scope
-        </h2>
+      <section id=bg>
+        <h2>Motivation and Background</h2>
+        <p>Enabling Machine Learning inference in
+          the browser (as opposed e.g. to in the cloud) enhances privacy, since input
+          data such as locally sourced images or video streams stay within the
+          browser's sandbox. Local processing also enables machine learning use
+          cases that require low latency, such as object detection in immersive
+          web experiences.
         <p>
           Currently, machine learning inference in the browser uses the WebGL
           graphics API with limited or no access to platform capabilities
           beneficial for ML such as CPU parallelism, general-purpose GPU, or
           dedicated ML hardware accelerators.
         </p>
+
+      </section>
+      <section id="scope" class="scope">
+        <h2>
+          Scope
+        </h2>
         <p>
-          The proposed Web API aims to expose generic capabilities to the Web
+          The Web Machine Learning Working Group develops a Web API aiming to expose generic capabilities to the Web
           required to provide close-to-native machine learning performance in
-          the browser. In addition to the performance benefits, inference in
-          the browser as opposed to in the cloud enhances privacy, since input
-          data such as locally sourced images or video streams stay within the
-          browser's sandbox. Local processing also enables machine learning use
-          cases that require low latency, such as object detection in immersive
-          web experiences.
+          the browser. 
         </p>
+        <p>It may also work on a higher-level API to load a custom pre-trained Machine Learning model for inference in the browser.</p>
         <section id="section-out-of-scope">
           <h3 id="out-of-scope">
             Out of Scope
