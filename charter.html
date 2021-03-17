@@ -197,8 +197,30 @@
           The Web Machine Learning Working Group develops a Web API aiming to expose generic capabilities to the Web
           required to provide close-to-native machine learning performance in
           the browser. 
+          This Web API for neural network inference hardware acceleration:
         </p>
-        <p>It may also work on a higher-level API to load a custom pre-trained Machine Learning model for inference in the browser.</p>
+        <ul>
+          <li>Allow to construct a neural network computational graph by common
+          building blocks, including constant values and base operations such
+          as convolution, pooling, softmax, normalization, fully connected,
+          activation, recurrent neural network (RNN) and long short-term memory
+          (LSTM);
+          </li>
+          <li>Allow to compile the neural network to native optimized format
+          for hardware execution;
+          </li>
+          <li>Allow to setup input from various sources on the Web, e.g. array
+          buffers, media streams, schedule the asynchronous hardware execution,
+          and retrieve the output when hardware execution completes.
+          </li>
+        </ul>
+        <p>
+          The APIs in scope of this group will not be tied to any particular
+          platform and will be implementable on top of existing major platform
+          APIs, such as Android Neural Networks API, Windows DirectML, and
+          macOS/iOS Metal Performance Shaders and Basic Neural Network
+          Subroutines.
+        </p>
         <section id="section-out-of-scope">
           <h3 id="out-of-scope">
             Out of Scope
@@ -208,6 +230,17 @@
             inference capabilities of the modern platforms beneficial or
             purpose-built for ML. Training capabilities are out of scope due to
             limited availability of respective platform APIs.
+          </p>
+          <p>
+            This Working Group will not define any hardware features or
+            algorithms.
+          </p>
+          <p>
+            To avoid overlap with existing work, generic primitives used by
+            traditional machine learning algorithms such as base linear algebra
+            operations are out of scope. The WebGL and WebGPU shaders and
+            WebAssembly SIMD are expected to address these requirements, see
+            the Coordination section for details.
           </p>
           <ul class="out-of-scope"></ul>
         </section>
@@ -285,6 +318,17 @@
               </p>
               <p class="milestone">
                 <b>Expected completion:</b> [N/A]
+              </p>
+              <p>
+                Note: This Working Group does not attempt to mandate a specific
+                neural network or machine learning model schema or format.
+                Other groups are expected to address the requirements of this
+                evolving area. Should a model format emerge that satisfies the
+                requirements for an <a href=
+                "https://www.w3.org/2005/09/dd-osd.html">Open Standard</a>,
+                then depending on the Community Group progress on the Model
+                Loader API, the Working Group may deliver the Model Loader API
+                as a normative specification.
               </p>
             </dd>
           </dl>
