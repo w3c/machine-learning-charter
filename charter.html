@@ -197,6 +197,29 @@
           The Web Machine Learning Working Group develops a Web API aiming to expose generic capabilities to the Web
           required to provide close-to-native machine learning performance in
           the browser. 
+          This Web API for neural network inference hardware acceleration:
+        </p>
+        <ul>
+          <li>Allow to construct a neural network computational graph by common
+          building blocks, including constant values and base operations such
+          as convolution, pooling, softmax, normalization, fully connected,
+          activation, recurrent neural network (RNN) and long short-term memory
+          (LSTM);
+          </li>
+          <li>Allow to compile the neural network to native optimized format
+          for hardware execution;
+          </li>
+          <li>Allow to setup input from various sources on the Web, e.g. array
+          buffers, media streams, schedule the asynchronous hardware execution,
+          and retrieve the output when hardware execution completes.
+          </li>
+        </ul>
+        <p>
+          The APIs in scope of this group will not be tied to any particular
+          platform and will be implementable on top of existing major platform
+          APIs, such as Android Neural Networks API, Windows DirectML, and
+          macOS/iOS Metal Performance Shaders and Basic Neural Network
+          Subroutines.
         </p>
         <p>It may also work on a higher-level API to load a custom pre-trained Machine Learning model for inference in the browser.</p>
         <section id="section-out-of-scope">
@@ -208,6 +231,17 @@
             inference capabilities of the modern platforms beneficial or
             purpose-built for ML. Training capabilities are out of scope due to
             limited availability of respective platform APIs.
+          </p>
+          <p>
+            This Working Group will not define any hardware features or
+            algorithms.
+          </p>
+          <p>
+            To avoid overlap with existing work, generic primitives used by
+            traditional machine learning algorithms such as base linear algebra
+            operations are out of scope. The WebGL and WebGPU shaders and
+            WebAssembly SIMD are expected to address these requirements, see
+            the Coordination section for details.
           </p>
           <ul class="out-of-scope"></ul>
         </section>
@@ -286,6 +320,9 @@
               <p class="milestone">
                 <b>Expected completion:</b> [N/A]
               </p>
+              <p>
+                Note:  The Model Loader API needs a standard format supported across browsers and devices for broad interoperability. The Working Group will only create a standard format of its own if no other standardized format aligns with the group's principles nor allows the group to control or provide direct input to shape it. The Working Group will only start working on this API when there is agreement on such a format.
+              </p>
             </dd>
           </dl>
         </section>
@@ -311,7 +348,7 @@
             Timeline
           </h3>
           <ul>
-            <li>Q1 2021: First teleconference
+            <li>Q2 2021: First teleconference
             </li>
             <li>Q2 2021: FPWD for Web Neural Network API
             </li>
@@ -427,6 +464,8 @@
               Machine Learning Working Group should coordinate with this group
               to avoid overlap.
             </dd>
+            <dt><a href="https://www.w3.org/groups/wg/webrtc">WebRTC Working Group</a></dt>
+            <dd>The WebRTC Working Group defines the <code>MediaStream</code> interface and related media processing APIs that likely make use of Machine Learning capabilities afforded by the WebNN API.</dd>
             <dt><a href="https://www.w3.org/2001/tag/">Technical Architecture Group</a></dt>
             <dd>Given the well-known ethical risks of bias in the use of Machine Learning, the Web Machine Learning Working Group will work with the Technical Architecture Group to ensure its work align with the <a href="https://w3ctag.github.io/ethical-web-principles/">W3C TAG Ethical Web Principles</a>.</dd>
           </dl>
@@ -448,6 +487,8 @@
               run general-purpose GPU (GPGPU) computing workloads such as
               machine learning algorithms in the WebGL context.
             </dd>
+            <dt><a href="https://tc39.es/">ECMA TC39</a></dt>
+            <dd>TC39 defines the JavaScript language whose primitives are key in how WebNN access data (e.g. <code>ArrayBuffer</code>). Possible work on <a href="https://github.com/tc39/proposal-operator-overloading#matrixvector-computations">operator overloading</a> would also impact possible evolutions of the WebNN API.</dd>
           </dl>
         </section>
       </section>
