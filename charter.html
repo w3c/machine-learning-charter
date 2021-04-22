@@ -221,6 +221,7 @@
           macOS/iOS Metal Performance Shaders and Basic Neural Network
           Subroutines.
         </p>
+        <p>It may also work on a higher-level API to load a custom pre-trained Machine Learning model for inference in the browser.</p>
         <section id="section-out-of-scope">
           <h3 id="out-of-scope">
             Out of Scope
@@ -290,10 +291,46 @@
             </dd>
           </dl>
         </section>
+        <section id="tentative">
+          <h3>
+            Tentative Specifications
+          </h3>
+          <p>
+            Depending on the <a href=
+            "https://www.w3.org/community/webmachinelearning/">Community
+            Group</a> progress, this Working Group may deliver the following
+            W3C normative specifications after sufficient incubation in the
+            Community Group:
+          </p>
+          <dl>
+            <dt id="model-loader" class="spec">
+              <a href=
+              "https://webmachinelearning.github.io/model-loader/">Model Loader
+              API</a>
+            </dt>
+            <dd>
+              <p>
+                This specification defines an API to load a custom pre-trained
+                machine learning model.
+              </p>
+              <p class="draft-status">
+                <b>Draft state:</b> <a href=
+                "https://webmachinelearning.github.io/model-loader/">Explainer</a>
+              </p>
+              <p class="milestone">
+                <b>Expected completion:</b> [N/A]
+              </p>
+              <p>
+                Note:  The Model Loader API needs a standard format supported across browsers and devices for broad interoperability. The Working Group will only create a standard format of its own if no other standardized format aligns with the group's principles nor allows the group to control or provide direct input to shape it. The Working Group will only start working on this API when there is agreement on such a format.
+              </p>
+            </dd>
+          </dl>
+        </section>
         <section id="ig-other-deliverables">
           <h3>
             Other Deliverables
           </h3>
+          <p>The Working Group will develop a <span id="ethical-issues">Working Group Note documenting ethical issues</span> associated with using Machine Learning on the Web, to help identify what mitigations its normative specifications should take into account.</p>
           <p>
             Other non-normative documents may be created such as:
           </p>
@@ -312,7 +349,7 @@
             Timeline
           </h3>
           <ul>
-            <li>Q1 2021: First teleconference
+            <li>Q2 2021: First teleconference
             </li>
             <li>Q2 2021: FPWD for Web Neural Network API
             </li>
@@ -338,6 +375,9 @@
           Each specification should contain a section detailing all known
           security and privacy implications for implementers, Web authors, and
           end users.
+        </p>
+        <p>
+          Each specification should contain a section detailing ethical considerations describing how implementers and Web authors should mitigate risks associated with ethical issues, such as <a href="#ethical-issues">the ones the group will be documenting</a>.
         </p>
         <p>
           There should be testing plans for each specification, starting from
@@ -399,7 +439,7 @@
               expected that the Community Group will continue drive technical
               work around other specifications in its scope. This Working Group
               will work with the Web Machine Learning Community Group
-              on shaping the Tentative Specifications
+              on shaping the <a href="#tentative">Tentative Specifications</a>
               being worked on in the Community Group for the Recommendation
               track.
             </dd>
@@ -428,6 +468,10 @@
               Machine Learning Working Group should coordinate with this group
               to avoid overlap.
             </dd>
+            <dt><a href="https://www.w3.org/groups/wg/webrtc">WebRTC Working Group</a></dt>
+            <dd>The WebRTC Working Group defines the <code>MediaStream</code> interface and related media processing APIs that likely make use of Machine Learning capabilities afforded by the WebNN API.</dd>
+            <dt><a href="https://www.w3.org/2001/tag/">Technical Architecture Group</a></dt>
+            <dd>Given the well-known ethical risks of bias in the use of Machine Learning, the Web Machine Learning Working Group will work with the Technical Architecture Group to ensure its work align with the <a href="https://w3ctag.github.io/ethical-web-principles/">W3C TAG Ethical Web Principles</a>.</dd>
           </dl>
         </section>
         <section>
@@ -447,6 +491,8 @@
               run general-purpose GPU (GPGPU) computing workloads such as
               machine learning algorithms in the WebGL context.
             </dd>
+            <dt><a href="https://tc39.es/">ECMA TC39</a></dt>
+            <dd>TC39 defines the JavaScript language whose primitives are key in how WebNN access data (e.g. <code>ArrayBuffer</code>). Possible work on <a href="https://github.com/tc39/proposal-operator-overloading#matrixvector-computations">operator overloading</a> would also impact possible evolutions of the WebNN API.</dd>
           </dl>
         </section>
       </section>
