@@ -96,7 +96,12 @@
       <h1 id="title">
         [DRAFT] Web Machine Learning Working Group Charter
       </h1><!-- delete PROPOSED after AC review completed -->
-      <p><em>This is draft charter for a new W3C Web Machine Learning Working Group for discussion. It has no formal standing.</em></p>
+      <p style="padding: 0.5ex; border: 1px solid green">
+        This draft charter is available on <a href=
+        "https://github.com/w3c/machine-learning-charter">GitHub</a>. Feel free
+        to raise <a href=
+        "https://github.com/w3c/machine-learning-charter/issues">issues</a>.
+      </p>
       <p class="mission">
         The <strong>mission</strong> of the <a href="">Web Machine Learning
         Working Group</a> is to develop APIs for enabling efficient machine
@@ -108,12 +113,6 @@
           Machine Learning Working Group.</a>
         </p>
       </div>
-      <p style="padding: 0.5ex; border: 1px solid green">
-        This proposed charter is available on <a href=
-        "https://github.com/w3c/machine-learning-charter">GitHub</a>. Feel free
-        to raise <a href=
-        "https://github.com/w3c/machine-learning-charter/issues">issues</a>.
-      </p>
       <section id="details">
         <table class="summary-table">
           <tr id="Duration">
@@ -175,6 +174,15 @@
       </section>
       <section id=bg>
         <h2>Motivation and Background</h2>
+        <p>
+          Computer Vision enables computers to gain understanding from images
+          or videos, Natural Language Processing enables interaction between
+          computers and human languages, and Speech Recognition enables
+          computers to recognize and translate spoken language into text.
+          Bringing these experiences to the web in a privacy-preserving manner
+          requires efficient machine learning inference capabilities built into
+          the browser.
+        </p>
         <p>Enabling Machine Learning inference in
           the browser (as opposed e.g. to in the cloud) enhances privacy, since input
           data such as locally sourced images or video streams stay within the
@@ -200,26 +208,37 @@
           This Web API for neural network inference hardware acceleration:
         </p>
         <ul>
-          <li>Allow to construct a neural network computational graph by common
-          building blocks, including constant values and base operations such
-          as convolution, pooling, softmax, normalization, fully connected,
-          activation, recurrent neural network (RNN) and long short-term memory
-          (LSTM);
+          <li>Allows to construct a neural network computational graph by common
+          building blocks required by well-known model architectures: constant
+          values and base operations such as convolution, pooling, softmax,
+          normalization, fully connected, and activation;
           </li>
-          <li>Allow to compile the neural network to native optimized format
+          <li>Allows to compile the neural network to native optimized format
           for hardware execution;
           </li>
-          <li>Allow to setup input from various sources on the Web, e.g. array
+          <li>Allows to setup input from various sources on the Web, e.g. array
           buffers, media streams, schedule the asynchronous hardware execution,
           and retrieve the output when hardware execution completes.
           </li>
         </ul>
+        <p>
+          This Working Group puts priority on building blocks required by
+          well-known model architectures such as recurrent neural network
+          (RNN), long short-term memory (LSTM) and transformers in the fields
+          of Computer Vision, Natural Language Processing and Speech
+          Recognition.
+        </p>
         <p>
           The APIs in scope of this group will not be tied to any particular
           platform and will be implementable on top of existing major platform
           APIs, such as Android Neural Networks API, Windows DirectML, and
           macOS/iOS Metal Performance Shaders and Basic Neural Network
           Subroutines.
+        </p>
+        <p>
+          For each high-level building block that decomposes into well-known
+          lower-level operations, the APIs will informatively define a generic
+          emulation path to allow for future extensibility.
         </p>
         <p>It may also work on a higher-level API to load a custom pre-trained Machine Learning model for inference in the browser.</p>
         <section id="section-out-of-scope">
@@ -237,11 +256,14 @@
             algorithms.
           </p>
           <p>
-            To avoid overlap with existing work, generic primitives used by
-            traditional machine learning algorithms such as base linear algebra
-            operations are out of scope. The WebGL and WebGPU shaders and
-            WebAssembly SIMD are expected to address these requirements, see
-            the Coordination section for details.
+            To avoid overlap with existing work, alignment with the Basic
+            Linear Algebra Subprograms (BLAS) interface is out of scope. The
+            WebGPU shaders and WebAssembly SIMD are expected to address the
+            BLAS compatibility requirement, see the Coordination section for
+            details.
+          </p>
+          <p>
+            Interoperability between the WebNN and WebGL APIs is out of scope.
           </p>
           <ul class="out-of-scope"></ul>
         </section>
@@ -253,14 +275,7 @@
         <p>
           More detailed milestones and updated publication schedules are
           available on the <a href=
-          "https://www.w3.org/wiki/[groupname]/PubStatus">group publication
-          status page</a>.
-        </p>
-        <p>
-          <i>Draft state</i> indicates the state of the deliverable at the time
-          of the charter approval. <i>Expected completion</i> indicates when
-          the deliverable is projected to become a Recommendation, or otherwise
-          reach a stable state.
+          "https://www.w3.org/groups/wg/webmachinelearning">group home page</a>.
         </p>
         <section id="normative">
           <h3>
@@ -272,8 +287,7 @@
           </p>
           <dl>
             <dt id="webnn" class="spec">
-              <a href="https://webmachinelearning.github.io/webnn/">Web Neural
-              Network API</a>
+              <a href="https://www.w3.org/TR/webnn/">Web Neural Network API</a>
             </dt>
             <dd>
               <p>
@@ -281,12 +295,23 @@
                 inference that can take advantage of hardware acceleration.
               </p>
               <p class="draft-status">
-                <b>Draft state:</b> <a href=
-                "https://webmachinelearning.github.io/webnn/">Adopted from Web
-                Machine Learning Community Group</a>
+                <b>Draft state:</b> Working Draft
+              </p>
+              <p>
+                <b>Adopted Draft:</b> The <span class="todo">title, stable URL,
+                and publication date of the <a href=
+                "https://www.w3.org/Consortium/Process/#adopted-draft">
+                Adopted Draft</a></span> which will serve as the basis for
+                work on the deliverable.
+              </p>
+              <p>
+                <b>Exclusion Draft:</b> The <span class="todo">title, stable
+                URL, and publication date of the most recent <a href=
+                "https://www.w3.org/Consortium/Process/#exclusion-draft">
+                Exclusion Draft</a></span>.
               </p>
               <p class="milestone">
-                <b>Expected completion:</b> [CR Q1 2022]
+                <b>Expected completion:</b> Q1 2025
               </p>
             </dd>
           </dl>
@@ -315,7 +340,8 @@
               </p>
               <p class="draft-status">
                 <b>Draft state:</b> <a href=
-                "https://webmachinelearning.github.io/model-loader/">Explainer</a>
+                "https://webmachinelearning.github.io/model-loader/">Adopted from Web
+                Machine Learning Community Group</a>
               </p>
               <p class="milestone">
                 <b>Expected completion:</b> [N/A]
@@ -330,7 +356,14 @@
           <h3>
             Other Deliverables
           </h3>
-          <p>The Working Group will develop a <span id="ethical-issues">Working Group Note documenting ethical issues</span> associated with using Machine Learning on the Web, to help identify what mitigations its normative specifications should take into account.</p>
+          <p>
+            The Working Group develops <a href=
+            "https://www.w3.org/TR/webmachinelearning-ethics/">Ethical
+            Principles for Web Machine Learning</a> Working Group Note
+            documenting ethical issues associated with using Machine Learning
+            on the Web, to help identify what mitigations its normative
+            specifications should take into account.
+          </p>
           <p>
             Other non-normative documents may be created such as:
           </p>
@@ -341,19 +374,6 @@
             </li>
             <li>Primer or Best Practice documents to support web developers
             when designing applications.
-            </li>
-          </ul>
-        </section>
-        <section id="timeline">
-          <h3>
-            Timeline
-          </h3>
-          <ul>
-            <li>Q2 2021: First teleconference
-            </li>
-            <li>Q2 2021: FPWD for Web Neural Network API
-            </li>
-            <li>Q2 2022: CR for Web Neural Network API
             </li>
           </ul>
         </section>
@@ -453,7 +473,8 @@
               The GPU for the Web Working Group defines a WebGPU Shading
               Language that may be used to implement traditional machine
               learning algorithms efficiently. The Web Machine Learning Working
-              Group should coordinate with this group to avoid overlap.
+              Group should coordinate with this group to avoid overlap and
+              to enable interoperability between the WebNN and WebGPU APIs.
             </dd>
           </dl>
           <dl>
@@ -469,7 +490,11 @@
               to avoid overlap.
             </dd>
             <dt><a href="https://www.w3.org/groups/wg/webrtc">WebRTC Working Group</a></dt>
-            <dd>The WebRTC Working Group defines the <code>MediaStream</code> interface and related media processing APIs that likely make use of Machine Learning capabilities afforded by the WebNN API.</dd>
+            <dd>
+              The WebRTC Working Group defines the <code>MediaStream</code>
+              interface and related media processing APIs that enable integration
+              with Machine Learning capabilities afforded by the WebNN API.
+            </dd>
             <dt><a href="https://www.w3.org/2001/tag/">Technical Architecture Group</a></dt>
             <dd>Given the well-known ethical risks of bias in the use of Machine Learning, the Web Machine Learning Working Group will work with the Technical Architecture Group to ensure its work align with the <a href="https://w3ctag.github.io/ethical-web-principles/">W3C TAG Ethical Web Principles</a>.</dd>
           </dl>
@@ -479,20 +504,20 @@
             External Organizations
           </h3>
           <dl>
-            <dt>
-              <a href="https://www.khronos.org/">Khronos</a>
-            </dt>
-            <dd>
-              The Khronos WebGL Working Group defines a WebGL API that supports
-              the OpenGL ES Shading Language (GLSL). The GLSL can be used to
-              implement traditional machine learning algorithms efficiently.
-              Furthermore, this group incubates a proposal for a WebGL 2.0
-              Compute specification that aims to provide an efficient way to
-              run general-purpose GPU (GPGPU) computing workloads such as
-              machine learning algorithms in the WebGL context.
-            </dd>
             <dt><a href="https://tc39.es/">ECMA TC39</a></dt>
             <dd>TC39 defines the JavaScript language whose primitives are key in how WebNN access data (e.g. <code>ArrayBuffer</code>). Possible work on <a href="https://github.com/tc39/proposal-operator-overloading#matrixvector-computations">operator overloading</a> would also impact possible evolutions of the WebNN API.</dd>
+          </dl>
+          <dl>
+            <dt><a href="https://github.com/openxla">OpenXLA Project</a></dt>
+            <dd>
+              OpenXLA Project develops StableHLO, a portable ML compute
+              operation set that makes frameworks easier to deploy across
+              different hardware. WebNN API targets diverse hardware platforms
+              and defines an operation set whose high-level operations can be
+              decomposed to low level primitives that can map to StableHLO
+              operations. Coordination and alignment between these two
+              operation sets is beneficial to the open ML ecosystem.
+            </dd>
           </dl>
         </section>
       </section>
@@ -672,16 +697,16 @@
               </tr>
               <tr>
                 <th>
-                  <a class="todo" href="">Initial Charter</a>
+                  <a href="https://www.w3.org/2021/04/web-machine-learning-charter.html">Initial Charter</a>
                 </th>
                 <td>
-                  <i class="todo">[dd monthname yyyy]</i>
+                  2021-04-20
                 </td>
                 <td>
-                  <i class="todo">[dd monthname yyyy]</i>
+                  2023-04-30
                 </td>
                 <td>
-                  <i class="todo">none</i>
+                  Initial charter
                 </td>
               </tr>
             </tbody>
