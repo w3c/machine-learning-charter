@@ -187,10 +187,11 @@
           the browser (as opposed e.g. to in the cloud) enhances privacy, since input
           data such as locally sourced images or video streams stay within the
           browser's sandbox. Local processing also enables machine learning use
-          cases that require low latency, such as object detection in immersive
-          web experiences.
+          cases that require low latency, such as object detection in real-timee
+	  communications and immersive web experiences.
         <p>
-          Currently, machine learning inference in the browser uses the WebGL
+          Currently, machine learning inference in the browser uses WebAssembly
+	  and the WebGL
           graphics API with limited or no access to platform capabilities
           beneficial for ML such as CPU parallelism, general-purpose GPU, or
           dedicated ML hardware accelerators.
@@ -217,7 +218,7 @@
           for hardware execution;
           </li>
           <li>Allows to setup input from various sources on the Web, e.g. array
-          buffers, media streams, schedule the asynchronous hardware execution,
+          buffers and media streams, schedule the asynchronous hardware execution,
           and retrieve the output when hardware execution completes.
           </li>
         </ul>
