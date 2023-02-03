@@ -55,6 +55,7 @@
     <header id="header">
       <aside>
         <ul id="navbar">
+	  <li><a href="#background">Motivation and Background</a></li>
           <li>
             <a href="#scope">Scope</a>
           </li>
@@ -103,18 +104,23 @@
         "https://github.com/w3c/machine-learning-charter/issues">issues</a>.
       </p>
       <p class="mission">
-        The <strong>mission</strong> of the <a href="">Web Machine Learning
+        The <strong>mission</strong> of the <a href="https://www.w3.org/groups/wg/webmachinelearning">Web Machine Learning
         Working Group</a> is to develop APIs for enabling efficient machine
         learning inference in the browser.
       </p>
       <div class="noprint">
         <p class="join">
-          <a href="https://www.w3.org/2004/01/pp-impl/#####/join">Join the Web
+          <a href="https://www.w3.org/groups/wg/webmachinelearning/join">Join the Web
           Machine Learning Working Group.</a>
         </p>
       </div>
       <section id="details">
         <table class="summary-table">
+	  <tr id="Status">
+	    <th>Charter Status</th>
+	    <td>See the <a href="https://www.w3.org/groups/wg/webmachinelearning/charters">group status page</A> and <a href="#history">detailed change history</a>.
+	    </td>
+	  </tr>
           <tr id="Duration">
             <th>
               Start date
@@ -130,14 +136,6 @@
             </th>
             <td>
               <i class="todo">CFP + 2 years</i>
-            </td>
-          </tr>
-          <tr>
-            <th>
-              Charter extension
-            </th>
-            <td>
-              See <a href="#history">Change History</a>.
             </td>
           </tr>
           <tr>
@@ -172,7 +170,7 @@
           </tr>
         </table>
       </section>
-      <section id=bg>
+      <section id=background>
         <h2>Motivation and Background</h2>
         <p>
           Computer Vision enables computers to gain understanding from images
@@ -187,10 +185,11 @@
           the browser (as opposed e.g. to in the cloud) enhances privacy, since input
           data such as locally sourced images or video streams stay within the
           browser's sandbox. Local processing also enables machine learning use
-          cases that require low latency, such as object detection in immersive
-          web experiences.
+          cases that require low latency, such as object detection in real-time
+	  communications and immersive web experiences.
         <p>
-          Currently, machine learning inference in the browser uses the WebGL
+          Currently, machine learning inference in the browser uses WebAssembly
+	  and the WebGL
           graphics API with limited or no access to platform capabilities
           beneficial for ML such as CPU parallelism, general-purpose GPU, or
           dedicated ML hardware accelerators.
@@ -217,7 +216,7 @@
           for hardware execution;
           </li>
           <li>Allows to setup input from various sources on the Web, e.g. array
-          buffers, media streams, schedule the asynchronous hardware execution,
+          buffers and media streams, schedule the asynchronous hardware execution,
           and retrieve the output when hardware execution completes.
           </li>
         </ul>
@@ -229,8 +228,8 @@
           Recognition.
         </p>
         <p>
-          The APIs in scope of this group will not be tied to any particular
-          platform and will be implementable on top of existing major platform
+          The APIs in scope of this group are not be tied to any particular
+          platform and are to be implementable on top of existing major platform
           APIs, such as Android Neural Networks API, Windows DirectML, and
           macOS/iOS Metal Performance Shaders and Basic Neural Network
           Subroutines.
@@ -259,13 +258,12 @@
             To avoid overlap with existing work, alignment with the Basic
             Linear Algebra Subprograms (BLAS) interface is out of scope. The
             WebGPU shaders and WebAssembly SIMD are expected to address the
-            BLAS compatibility requirement, see the Coordination section for
+            BLAS compatibility requirement, see the <a href="#coordination">Coordination section</a> for
             details.
           </p>
           <p>
-            Interoperability between the WebNN and WebGL APIs is out of scope.
+            Integration between the WebNN and WebGL APIs is out of scope, as the group focuses its efforts on integration with WebGPU APIs.
           </p>
-          <ul class="out-of-scope"></ul>
         </section>
       </section>
       <section id="deliverables">
@@ -273,9 +271,8 @@
           Deliverables
         </h2>
         <p>
-          More detailed milestones and updated publication schedules are
-          available on the <a href=
-          "https://www.w3.org/groups/wg/webmachinelearning">group home page</a>.
+          Updated document status is available on the <a href=
+          "https://www.w3.org/groups/wg/webmachinelearning">group publication status page</a>.
         </p>
         <section id="normative">
           <h3>
@@ -295,24 +292,20 @@
                 inference that can take advantage of hardware acceleration.
               </p>
               <p class="draft-status">
-                <b>Draft state:</b> Working Draft
-              </p>
-              <p>
-                <b>Adopted Draft:</b> The <span class="todo">title, stable URL,
-                and publication date of the <a href=
-                "https://www.w3.org/Consortium/Process/#adopted-draft">
-                Adopted Draft</a></span> which will serve as the basis for
-                work on the deliverable.
-              </p>
-              <p>
-                <b>Exclusion Draft:</b> The <span class="todo">title, stable
-                URL, and publication date of the most recent <a href=
-                "https://www.w3.org/Consortium/Process/#exclusion-draft">
-                Exclusion Draft</a></span>.
+                <b>Draft state:</b> W3C Working Draft
               </p>
               <p class="milestone">
                 <b>Expected completion:</b> Q1 2025
               </p>
+              <p>
+                <b>Adopted Draft:</b> <a class="todo" href="https://www.w3.org/TR/2023/WD-webnn-20230124/">https://www.w3.org/TR/2023/WD-webnn-20230124/</a>, 2023-01-24 <span class="todo">(this will change before the AC review starts)</span>
+              </p>
+              <p>
+                <b>Exclusion Draft:</b> <a href="https://www.w3.org/TR/2021/WD-webnn-20210622/">https://www.w3.org/TR/2021/WD-webnn-20210622/</a>, 2021-06-22<br>
+		Exclusion period began 2021-06-22; Exclusion period ended 2021-11-19.
+              </p>
+	      <p><b>Exclusion Draft Charter:</b> <a href="https://www.w3.org/2021/04/web-machine-learning-charter.html">https://www.w3.org/2021/04/web-machine-learning-charter.html</a>
+	      </p>
             </dd>
           </dl>
         </section>
@@ -377,6 +370,13 @@
             </li>
           </ul>
         </section>
+	<section id="timeline">
+	  <h3>Timeline</h3>
+	  <ul>
+	    <li>Q2 2023: Candidate Recommendation for WebNN</li>
+	    <li>Q1 2025: Recommendation for WebNN</li>
+	  </ul>
+	</section>
       </section>
       <section id="success-criteria">
         <h2>
@@ -388,8 +388,8 @@
           "Proposed Recommendation">Proposed Recommendation</a>, each normative
           specification is expected to have <a href=
           "https://www.w3.org/Consortium/Process/#implementation-experience">at
-          least two independent implementations</a> of every feature defined in
-          the specification.
+          least two independent, interoperable implementations</a> of every feature defined in
+          the specification, where interoperability can be verified by passing open test suites, and two or more implementations interoperating with each other. In order to advance to Proposed Recommendation, each normative specification must have an open test suite of every feature defined in the specification..
         </p>
         <p>
           Each specification should contain a section detailing all known
@@ -401,18 +401,13 @@
         </p>
         <p>
           There should be testing plans for each specification, starting from
-          the earliest drafts.
+          the earliest drafts. To promote interoperability, all changes made to specifications in Candidate Recommendation or to features that have deployed implementations should have tests. Testing efforts should be conducted via the <a href="https://github.com/web-platform-tests/wpt">Web Platform Tests</a> project.
         </p>
         <p>
           Each specification should contain a section on accessibility that
           describes the benefits and impacts, including ways specification
           features can be used to address them, and recommendations for
           maximising accessibility in implementations.
-        </p>
-        <p>
-          To promote interoperability, all changes made to specifications
-          should have <a href=
-          'https://www.w3.org/2019/02/testing-policy.html'>tests</a>.
         </p>
       </section>
       <section id="coordination">
@@ -421,8 +416,8 @@
         </h2>
         <p>
           For all specifications, this Working Group will seek <a href=
-          "https://www.w3.org/Guide/process/charter.html#horizontal-review">horizontal
-          review</a> for accessibility, internationalization, performance,
+          "https://www.w3.org/Guide/documentreview/#how_to_get_horizontal_review">horizontal
+          review</a> for accessibility, internationalization,
           privacy, and security with the relevant Working and Interest Groups,
           and with the <a href="https://www.w3.org/2001/tag/" title=
           "Technical Architecture Group">TAG</a>. Invitation for review must be
@@ -463,21 +458,17 @@
               being worked on in the Community Group for the Recommendation
               track.
             </dd>
-          </dl>
-          <dl>
             <dt>
               <a href="https://www.w3.org/2020/gpu/">GPU for the Web Working
               Group</a>
             </dt>
             <dd>
-              The GPU for the Web Working Group defines a WebGPU Shading
-              Language that may be used to implement traditional machine
+              The GPU for the Web Working Group defines access to GPU devices with the <a href="https://www.w3.org/TR/webgpu/">WebGPU API</a>, and a <a href="https://www.w3.org/TR/WGSL/">WebGPU Shading
+              Language</a> that may be used to implement traditional machine
               learning algorithms efficiently. The Web Machine Learning Working
-              Group should coordinate with this group to avoid overlap and
-              to enable interoperability between the WebNN and WebGPU APIs.
+              Group will coordinate with this group to avoid overlap and
+              to ensure proper integration of WebNN with WebGPU APIs.
             </dd>
-          </dl>
-          <dl>
             <dt>
               <a href="https://www.w3.org/community/webassembly/">WebAssembly
               Community Group</a>
@@ -486,7 +477,7 @@
               The WebAssembly Community Group incubates a proposal for a
               128-bit SIMD support in WebAssembly that can be used to implement
               traditional machine learning algorithms efficiently. The Web
-              Machine Learning Working Group should coordinate with this group
+              Machine Learning Working Group will coordinate with this group
               to avoid overlap.
             </dd>
             <dt><a href="https://www.w3.org/groups/wg/webrtc">WebRTC Working Group</a></dt>
@@ -506,8 +497,6 @@
           <dl>
             <dt><a href="https://tc39.es/">ECMA TC39</a></dt>
             <dd>TC39 defines the JavaScript language whose primitives are key in how WebNN access data (e.g. <code>ArrayBuffer</code>). Possible work on <a href="https://github.com/tc39/proposal-operator-overloading#matrixvector-computations">operator overloading</a> would also impact possible evolutions of the WebNN API.</dd>
-          </dl>
-          <dl>
             <dt><a href="https://github.com/openxla">OpenXLA Project</a></dt>
             <dd>
               OpenXLA Project develops StableHLO, a portable ML compute
@@ -564,14 +553,14 @@
           meetings will be archived for public review, and technical
           discussions and issue tracking will be conducted in a manner that can
           be both read and written to by the general public. Working Drafts and
-          Editor's Drafts of specifications will be developed on a public
-          repository and may permit direct public contribution requests. The
+          Editor's Drafts of specifications will be developed in public
+          repositories and may permit direct public contribution requests. The
           meetings themselves are not open to public participation, however.
         </p>
         <p>
           Information about the group (including details about deliverables,
           issues, actions, status, participants, and meetings) will be
-          available from the <a href="">Web Machine Learning Working Group home
+          available from the <a href="https://www.w3.org/groups/wg/webmachinelearning">Web Machine Learning Working Group home
           page.</a>
         </p>
         <p>
@@ -598,7 +587,7 @@
           This group will seek to make decisions through consensus and due
           process, per the <a href=
           "https://www.w3.org/Consortium/Process/#Consensus">W3C Process
-          Document (section 3.3</a>). Typically, an editor or other participant
+          Document (section 5.2.1, Consensus</a>). Typically, an editor or other participant
           makes an initial proposal, which is then refined in discussion with
           members of the group and other reviewers, and consensus emerges with
           little formal voting being required.
@@ -628,7 +617,7 @@
         <p>
           This charter is written in accordance with the <a href=
           "https://www.w3.org/Consortium/Process/#Votes">W3C Process Document
-          (Section 3.4, Votes)</a> and includes no voting procedures beyond
+          (Section 5.2.3, Deciding by Vote)</a> and includes no voting procedures beyond
           what the Process Document requires.
         </p>
       </section>
@@ -643,8 +632,7 @@
           standards, W3C seeks to issue Recommendations that can be
           implemented, according to this policy, on a Royalty-Free basis. For
           more information about disclosure obligations for this group, please
-          see the <a href="https://www.w3.org/2004/01/pp-impl/">W3C Patent
-          Policy Implementation</a>.
+          see the <a href="https://www.w3.org/groups/wg/webmachinelearning/ipr">licensing information</a>.
         </p>
       </section>
       <section id="licensing">
@@ -663,7 +651,7 @@
         </h2>
         <p>
           This charter has been created according to <a href=
-          "https://www.w3.org/Consortium/Process/#GAGeneral">section 5.2</a> of
+          "https://www.w3.org/Consortium/Process/#GAGeneral">section 3.4</a> of
           the <a href="https://www.w3.org/Consortium/Process/">Process
           Document</a>. In the event of a conflict between this document or the
           provisions of any charter and the W3C Process, the W3C Process shall
@@ -677,7 +665,7 @@
             The following table lists details of all changes from the initial
             charter, per the <a href=
             "https://www.w3.org/Consortium/Process/#CharterReview">W3C Process
-            Document (section 5.2.3)</a>:
+            Document (section 4.3, Advisory Committee Review of a Charter)</a>:
           </p>
           <table class="history">
             <tbody>
@@ -712,6 +700,10 @@
             </tbody>
           </table>
         </section>
+	<section id="changelog">
+	  <h2>Change log</h2>
+	  <p>Changes to this document are documented in this section.</p>
+	</section>
       </section>
     </main>
     <hr>
@@ -720,16 +712,8 @@
         <a href="mailto:dom@w3.org">Dominique Hazael-Massieux</a>
       </address>
       <p class="copyright">
-        <a href=
-        "https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
-        © 2021 <a href="https://www.w3.org/"><abbr title=
-        "World Wide Web Consortium">W3C</abbr></a><sup>®</sup> ( <a href=
-        "https://www.csail.mit.edu/"><abbr title=
-        "Massachusetts Institute of Technology">MIT</abbr></a>, <a href=
-        "https://www.ercim.eu/"><abbr title=
-        "European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
-        <a href="https://www.keio.ac.jp/">Keio</a>, <a href=
-        "https://ev.buaa.edu.cn/">Beihang</a> ), All Rights Reserved.
+        Copyright
+        © 2023 <a href="https://www.w3.org/">World Wide Web Consortium</a>.
         <abbr title="World Wide Web Consortium">W3C</abbr> <a href=
         "https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
         <a href=
